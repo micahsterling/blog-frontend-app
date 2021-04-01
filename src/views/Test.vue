@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="Test">
     <h1>{{ message }}</h1>
   </div>
 </template>
@@ -8,16 +8,13 @@
 </style>
 
 <script>
-import axios from "axios";
-
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      message: "Welcome to test.js!",
     };
   },
   created: function () {},
   methods: {},
 };
 </script>
-
