@@ -5,9 +5,9 @@
       <router-link to="/about">About</router-link> |
 
       <router-link to="/posts/new">New Post</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/logout">Logout</router-link> |
+      <router-link to="/signup" v-if="!isLoggedIn()">Signup</router-link > |
+      <router-link to="/login" v-if="!isLoggedIn()">Login</router-link> |
+      <router-link to="/logout" v-if="isLoggedIn()">Logout</router-link> |
       <router-link to="/test">Test</router-link>
     </div>
     <router-view/>
@@ -36,3 +36,18 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      console.log("logged in");
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
