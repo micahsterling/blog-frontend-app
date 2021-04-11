@@ -10,6 +10,9 @@
       <router-link to="/logout" v-if="isLoggedIn()">Logout</router-link> |
       <router-link to="/test">Test</router-link>
     </div>
+    <div class="container">
+      <p>User Id: {{getUserId()}}</p>
+    </div>
     <router-view/>
   </div>
 </template>
@@ -47,6 +50,9 @@ export default {
       } else {
         return false;
       }
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
     },
   },
 };
